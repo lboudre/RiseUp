@@ -5026,6 +5026,7 @@ P0.10=NFC2</text>
 <part name="SUPPLY1" library="LinnesLab-Symbols" deviceset="3.3V" device=""/>
 <part name="SUPPLY3" library="LinnesLab-Symbols" deviceset="3.3V" device=""/>
 <part name="J1" library="LinnesLab-Connectors" deviceset="CONN_07" device=""/>
+<part name="GPS.PWR" library="LinnesLab-Power" deviceset="MIC5504" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -5659,6 +5660,10 @@ Need to put more space at the left of the microcontroller</text>
 <instance part="J1" gate="G$1" x="-7.62" y="86.36" smashed="yes">
 <attribute name="VALUE" x="-12.7" y="76.454" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="0" y="89.408" size="1.778" layer="95" font="vector"/>
+</instance>
+<instance part="GPS.PWR" gate="G$1" x="154.94" y="-15.24" smashed="yes">
+<attribute name="NAME" x="147.32" y="-6.35" size="1.778" layer="95"/>
+<attribute name="VALUE" x="147.32" y="-25.4" size="1.778" layer="96"/>
 </instance>
 </instances>
 <busses>
@@ -6744,6 +6749,18 @@ Need to put more space at the left of the microcontroller</text>
 <wire x1="198.12" y1="-50.8" x2="203.2" y2="-50.8" width="0.1524" layer="91"/>
 <label x="198.12" y="-50.8" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="SD2" gate="G$1" pin="CS"/>
+</segment>
+</net>
+<net name="D2/GPS.PWR" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.02/AIN0"/>
+<wire x1="124.46" y1="226.06" x2="124.46" y2="223.52" width="0.1524" layer="91"/>
+<label x="124.46" y="223.52" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="GPS.PWR" gate="G$1" pin="EN"/>
+<wire x1="144.78" y1="-20.32" x2="142.24" y2="-20.32" width="0.1524" layer="91"/>
+<label x="142.24" y="-20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>

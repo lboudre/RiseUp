@@ -1381,6 +1381,10 @@ design rules under a new name.</description>
 <attribute name="NAME" x="3.73" y="34.397" size="0.6096" layer="25" font="vector" ratio="20"/>
 <attribute name="VALUE" x="3.73" y="30.968" size="0.6096" layer="27" font="vector" ratio="20"/>
 </element>
+<element name="GPS.PWR" library="LinnesLab-Power" package="SOT23-5" value="MIC5504" x="35.5346" y="18.4658" smashed="yes">
+<attribute name="NAME" x="33.6296" y="18.4658" size="0.6096" layer="25" ratio="20" rot="R90" align="bottom-center"/>
+<attribute name="VALUE" x="38.0746" y="18.4658" size="0.6096" layer="27" ratio="20" rot="R90" align="bottom-center"/>
+</element>
 </elements>
 <signals>
 <signal name="GND">
@@ -1896,6 +1900,11 @@ design rules under a new name.</description>
 <contactref element="U2" pad="20"/>
 <contactref element="SD2" pad="2"/>
 <wire x1="31.2966" y1="6.451" x2="33.15" y2="21.8394" width="0" layer="19" extent="1-16"/>
+</signal>
+<signal name="D2/GPS.PWR">
+<contactref element="U2" pad="15"/>
+<contactref element="GPS.PWR" pad="3"/>
+<wire x1="36.4846" y1="17.1657" x2="29.65" y2="21.8394" width="0" layer="19" extent="1-1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>
