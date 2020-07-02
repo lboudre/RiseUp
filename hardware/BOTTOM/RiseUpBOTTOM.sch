@@ -2185,7 +2185,7 @@ and LEDs</text>
 <text x="57.15" y="130.81" size="2.54" layer="97" font="vector" ratio="15">Transimpedance Amplifier</text>
 <text x="144.78" y="10.16" size="1.778" layer="97" ratio="15">I2C Address: 0x2C</text>
 <text x="210.82" y="12.7" size="1.778" layer="97" ratio="15">I2C Address: 0x2D</text>
-<text x="264.16" y="99.06" size="1.778" layer="91">Pins that need to go from bottom board to top board 
+<text x="264.16" y="99.06" size="1.778" layer="97">Pins that need to go from bottom board to top board 
 3.3V
 Ground
 TIA 
@@ -2642,7 +2642,7 @@ LED.CTRL</text>
 <label x="68.58" y="-16.51" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="TIA" class="0">
+<net name="A6/TIA" class="0">
 <segment>
 <wire x1="142.24" y1="33.02" x2="137.16" y2="33.02" width="0.1524" layer="91"/>
 <label x="137.16" y="33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
@@ -2660,6 +2660,11 @@ LED.CTRL</text>
 <pinref part="OP4" gate="G$1" pin="OUT"/>
 <wire x1="82.55" y1="102.87" x2="85.09" y2="102.87" width="0.1524" layer="91"/>
 <junction x="85.09" y="102.87"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="5"/>
+<wire x1="142.24" y1="-15.24" x2="149.86" y2="-15.24" width="0.1524" layer="91"/>
+<label x="149.86" y="-15.24" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="PD.C" class="0">
@@ -2796,12 +2801,17 @@ LED.CTRL</text>
 <junction x="238.76" y="30.48"/>
 </segment>
 </net>
-<net name="LED.CTRL" class="0">
+<net name="D29/LED.CTRL" class="0">
 <segment>
 <pinref part="U$4" gate="G$1" pin="A"/>
 <wire x1="236.22" y1="35.56" x2="238.76" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="238.76" y1="35.56" x2="238.76" y2="43.18" width="0.1524" layer="91"/>
 <label x="238.76" y="43.18" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="6"/>
+<wire x1="142.24" y1="-12.7" x2="149.86" y2="-12.7" width="0.1524" layer="91"/>
+<label x="149.86" y="-12.7" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -2815,7 +2825,7 @@ LED.CTRL</text>
 <junction x="71.12" y="33.02"/>
 </segment>
 </net>
-<net name="PPG" class="0">
+<net name="A7/PPG" class="0">
 <segment>
 <wire x1="170.18" y1="33.02" x2="172.72" y2="33.02" width="0.1524" layer="91"/>
 <label x="172.72" y="33.02" size="1.27" layer="95" xref="yes"/>
@@ -2831,6 +2841,11 @@ LED.CTRL</text>
 <junction x="224.79" y="105.41"/>
 <label x="224.79" y="115.57" size="1.27" layer="95" rot="R180" xref="yes"/>
 <label x="224.79" y="95.25" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="7"/>
+<wire x1="142.24" y1="-10.16" x2="149.86" y2="-10.16" width="0.1524" layer="91"/>
+<label x="149.86" y="-10.16" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$13" class="0">

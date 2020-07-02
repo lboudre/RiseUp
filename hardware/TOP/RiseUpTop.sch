@@ -5187,7 +5187,6 @@ does not work with Mynewt bootloader !!
 From: https://learn.adafruit.com/bluefruit-nrf52-feather-learning-guide?view=all</text>
 <text x="45.72" y="213.36" size="1.524" layer="97" font="vector" ratio="15">Additional notes for
 advanced users only</text>
-<text x="345.44" y="259.08" size="1.27" layer="91" ratio="15">Make sure the resistors are next to each other on the board </text>
 <text x="337.82" y="-83.82" size="1.27" layer="97">I2C Address = 0x68h</text>
 <text x="294.64" y="-83.82" size="1.27" layer="97">Back-up
 battery
@@ -5205,6 +5204,32 @@ if desired</text>
 <text x="-25.4" y="104.14" size="1.27" layer="97">Notes:
 Might have to change the connector
 Need to put more space at the left of the microcontroller</text>
+<text x="347.98" y="259.08" size="1.27" layer="97">Make sure the resistors are next to each other on board</text>
+<text x="350.52" y="-35.56" size="1.27" layer="97">Find a pin to connect the third button if necessary</text>
+<text x="421.64" y="-22.86" size="1.778" layer="97">Power management 
+D27/CHRG.STATUS (input to micro)
+A4/BATT (Input)
+
+PPG Circuit
+D29/LED.CTRL (ouput)
+A6/TIA (Input)
+A7/PPG (Input)
+
+OLED Pins
+D3/RESET.OLED (ouput)
+D4/DC.OLED (ouput)
+D16/CS.OLED (ouput)
+
+SD Card Pins
+D5/CD1 (Input)
+D7/SD.CS (ouput)
+
+Buttons Inputs
+D11/SW1 (Input)
+D15/SW2 (Input)
+NEED to add SW3
+
+</text>
 </plain>
 <instances>
 <instance part="GND7" gate="G$1" x="289.56" y="81.28" smashed="yes">
@@ -6110,9 +6135,9 @@ Need to put more space at the left of the microcontroller</text>
 </net>
 <net name="SCK" class="0">
 <segment>
-<label x="299.72" y="71.12" size="1.778" layer="95"/>
 <pinref part="U3" gate="G$1" pin="D0/SPI_SCLK/I2C_SCK"/>
-<wire x1="325.12" y1="71.12" x2="299.72" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="325.12" y1="71.12" x2="322.58" y2="71.12" width="0.1524" layer="91"/>
+<label x="322.58" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="198.12" y1="-48.26" x2="203.2" y2="-48.26" width="0.1524" layer="91"/>
@@ -6127,9 +6152,9 @@ Need to put more space at the left of the microcontroller</text>
 </net>
 <net name="MOSI" class="0">
 <segment>
-<label x="299.72" y="68.58" size="1.778" layer="95"/>
 <pinref part="U3" gate="G$1" pin="D1/SPI_SDIN/I2C_SDA"/>
-<wire x1="325.12" y1="68.58" x2="299.72" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="325.12" y1="68.58" x2="322.58" y2="68.58" width="0.1524" layer="91"/>
+<label x="322.58" y="68.58" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <wire x1="198.12" y1="-45.72" x2="203.2" y2="-45.72" width="0.1524" layer="91"/>
@@ -6152,20 +6177,6 @@ Need to put more space at the left of the microcontroller</text>
 <wire x1="154.94" y1="246.38" x2="157.48" y2="246.38" width="0.1524" layer="91"/>
 <pinref part="U2" gate="G$1" pin="P0.14"/>
 <label x="157.48" y="246.38" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="DC.OLED" class="0">
-<segment>
-<label x="299.72" y="78.74" size="1.778" layer="95"/>
-<pinref part="U3" gate="G$1" pin="DC/I2C_SA0"/>
-<wire x1="325.12" y1="78.74" x2="299.72" y2="78.74" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="RESET.OLED" class="0">
-<segment>
-<label x="299.72" y="81.28" size="1.778" layer="95"/>
-<pinref part="U3" gate="G$1" pin="/RES"/>
-<wire x1="325.12" y1="81.28" x2="299.72" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -6229,25 +6240,11 @@ Need to put more space at the left of the microcontroller</text>
 <wire x1="325.12" y1="48.26" x2="307.34" y2="48.26" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="CS.OLED" class="0">
-<segment>
-<label x="299.72" y="83.82" size="1.778" layer="95"/>
-<pinref part="U3" gate="G$1" pin="/CS"/>
-<wire x1="325.12" y1="83.82" x2="299.72" y2="83.82" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="CD2" class="0">
 <segment>
 <wire x1="198.12" y1="-35.56" x2="203.2" y2="-35.56" width="0.1524" layer="91"/>
 <label x="198.12" y="-35.56" size="1.27" layer="95" rot="R180" xref="yes"/>
 <pinref part="SD2" gate="G$1" pin="CARD_DETECT1"/>
-</segment>
-</net>
-<net name="CD1" class="0">
-<segment>
-<wire x1="198.12" y1="-33.02" x2="203.2" y2="-33.02" width="0.1524" layer="91"/>
-<label x="198.12" y="-33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="SD2" gate="G$1" pin="CARD_DETECT"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -6375,23 +6372,6 @@ Need to put more space at the left of the microcontroller</text>
 <pinref part="R12" gate="G$1" pin="2"/>
 <wire x1="91.44" y1="-60.96" x2="91.44" y2="-63.5" width="0.1524" layer="91"/>
 <junction x="91.44" y="-60.96"/>
-</segment>
-</net>
-<net name="SW1" class="0">
-<segment>
-<pinref part="SW1" gate="G$1" pin="1"/>
-<label x="287.02" y="-20.32" size="1.27" layer="95" ratio="15" rot="R180" xref="yes"/>
-<wire x1="287.02" y1="-20.32" x2="292.1" y2="-20.32" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SW2" gate="G$1" pin="1"/>
-<label x="320.04" y="-20.32" size="1.27" layer="95" ratio="15" rot="R180" xref="yes"/>
-<wire x1="320.04" y1="-20.32" x2="325.12" y2="-20.32" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="SW5" gate="G$1" pin="1"/>
-<label x="353.06" y="-20.32" size="1.27" layer="95" ratio="15" rot="R180" xref="yes"/>
-<wire x1="353.06" y1="-20.32" x2="358.14" y2="-20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$30" class="0">
@@ -6761,6 +6741,106 @@ Need to put more space at the left of the microcontroller</text>
 <pinref part="GPS.PWR" gate="G$1" pin="EN"/>
 <wire x1="144.78" y1="-20.32" x2="142.24" y2="-20.32" width="0.1524" layer="91"/>
 <label x="142.24" y="-20.32" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="D5/CD1" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.05/AIN3"/>
+<wire x1="132.08" y1="226.06" x2="132.08" y2="223.52" width="0.1524" layer="91"/>
+<label x="132.08" y="223.52" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<wire x1="198.12" y1="-33.02" x2="203.2" y2="-33.02" width="0.1524" layer="91"/>
+<label x="198.12" y="-33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="SD2" gate="G$1" pin="CARD_DETECT"/>
+</segment>
+</net>
+<net name="D11/SW1" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.11"/>
+<wire x1="154.94" y1="238.76" x2="157.48" y2="238.76" width="0.1524" layer="91"/>
+<label x="157.48" y="238.76" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="SW1" gate="G$1" pin="1"/>
+<label x="287.02" y="-20.32" size="1.27" layer="95" ratio="15" rot="R180" xref="yes"/>
+<wire x1="287.02" y1="-20.32" x2="292.1" y2="-20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="D15/SW2" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.15"/>
+<wire x1="154.94" y1="248.92" x2="157.48" y2="248.92" width="0.1524" layer="91"/>
+<label x="157.48" y="248.92" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="SW2" gate="G$1" pin="1"/>
+<label x="320.04" y="-20.32" size="1.27" layer="95" ratio="15" rot="R180" xref="yes"/>
+<wire x1="320.04" y1="-20.32" x2="325.12" y2="-20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="D16/SW3" class="0">
+<segment>
+<pinref part="SW5" gate="G$1" pin="1"/>
+<wire x1="353.06" y1="-20.32" x2="358.14" y2="-20.32" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="D16/CS.OLED" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.16"/>
+<wire x1="154.94" y1="251.46" x2="157.48" y2="251.46" width="0.1524" layer="91"/>
+<label x="157.48" y="251.46" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="/CS"/>
+<wire x1="325.12" y1="83.82" x2="322.58" y2="83.82" width="0.1524" layer="91"/>
+<label x="322.58" y="83.82" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="322.58" y="83.82" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="D3/RESET.OLED" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.03/AIN1"/>
+<wire x1="127" y1="226.06" x2="127" y2="223.52" width="0.1524" layer="91"/>
+<label x="127" y="223.52" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="/RES"/>
+<wire x1="325.12" y1="81.28" x2="322.58" y2="81.28" width="0.1524" layer="91"/>
+<label x="322.58" y="81.28" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="D4/DC.OLED" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.04/AIN2"/>
+<wire x1="129.54" y1="226.06" x2="129.54" y2="223.52" width="0.1524" layer="91"/>
+<label x="129.54" y="223.52" size="1.27" layer="95" rot="R270" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U3" gate="G$1" pin="DC/I2C_SA0"/>
+<wire x1="325.12" y1="78.74" x2="322.58" y2="78.74" width="0.1524" layer="91"/>
+<label x="322.58" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="D29/LED.CTRL" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.29/AIN5"/>
+<wire x1="109.22" y1="254" x2="106.68" y2="254" width="0.1524" layer="91"/>
+<label x="106.68" y="254" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="A6/TIA" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.30/AIN6"/>
+<wire x1="109.22" y1="251.46" x2="106.68" y2="251.46" width="0.1524" layer="91"/>
+<label x="106.68" y="251.46" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="A7/PPG" class="0">
+<segment>
+<pinref part="U2" gate="G$1" pin="P0.31/AIN7"/>
+<wire x1="109.22" y1="248.92" x2="106.68" y2="248.92" width="0.1524" layer="91"/>
+<label x="106.68" y="248.92" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
