@@ -2174,6 +2174,8 @@ Allows current flow when high potential at base.</description>
 <part name="GND2" library="LinnesLab-Symbols" deviceset="GND" device=""/>
 <part name="SUPPLY3" library="LinnesLab-Symbols" deviceset="3.3V" device=""/>
 <part name="J1" library="LinnesLab-Connectors" deviceset="CONN_07" device=""/>
+<part name="GND3" library="LinnesLab-Symbols" deviceset="GND" device=""/>
+<part name="SUPPLY1" library="LinnesLab-Symbols" deviceset="3.3V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -2421,6 +2423,12 @@ LED.CTRL</text>
 <attribute name="VALUE" x="132.08" y="-30.226" size="1.778" layer="96" font="vector"/>
 <attribute name="NAME" x="132.08" y="-7.112" size="1.778" layer="95" font="vector"/>
 </instance>
+<instance part="GND3" gate="G$1" x="147.32" y="-33.02" smashed="yes">
+<attribute name="VALUE" x="147.32" y="-33.274" size="1.778" layer="96" align="top-center"/>
+</instance>
+<instance part="SUPPLY1" gate="G$1" x="147.32" y="-5.08" smashed="yes">
+<attribute name="VALUE" x="147.32" y="-2.286" size="1.778" layer="96" align="bottom-center"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -2523,6 +2531,12 @@ LED.CTRL</text>
 <pinref part="GND2" gate="G$1" pin="GND"/>
 <wire x1="27.94" y1="-19.05" x2="27.94" y2="-16.51" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="3"/>
+<wire x1="142.24" y1="-20.32" x2="147.32" y2="-20.32" width="0.1524" layer="91"/>
+<pinref part="GND3" gate="G$1" pin="GND"/>
+<wire x1="147.32" y1="-20.32" x2="147.32" y2="-30.48" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
@@ -2607,6 +2621,12 @@ LED.CTRL</text>
 <pinref part="SUPPLY3" gate="G$1" pin="3.3V"/>
 <wire x1="27.94" y1="-6.35" x2="27.94" y2="-8.89" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="4"/>
+<wire x1="142.24" y1="-17.78" x2="147.32" y2="-17.78" width="0.1524" layer="91"/>
+<pinref part="SUPPLY1" gate="G$1" pin="3.3V"/>
+<wire x1="147.32" y1="-17.78" x2="147.32" y2="-5.08" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="SDA" class="0">
 <segment>
@@ -2624,6 +2644,11 @@ LED.CTRL</text>
 <wire x1="66.04" y1="-11.43" x2="68.58" y2="-11.43" width="0.1524" layer="91"/>
 <label x="68.58" y="-11.43" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="1"/>
+<wire x1="142.24" y1="-25.4" x2="149.86" y2="-25.4" width="0.1524" layer="91"/>
+<label x="149.86" y="-25.4" size="1.27" layer="95" xref="yes"/>
+</segment>
 </net>
 <net name="SCL" class="0">
 <segment>
@@ -2640,6 +2665,11 @@ LED.CTRL</text>
 <pinref part="IMU1" gate="G$1" pin="SCL"/>
 <wire x1="66.04" y1="-16.51" x2="68.58" y2="-16.51" width="0.1524" layer="91"/>
 <label x="68.58" y="-16.51" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="2"/>
+<wire x1="142.24" y1="-22.86" x2="149.86" y2="-22.86" width="0.1524" layer="91"/>
+<label x="149.86" y="-22.86" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="A6/TIA" class="0">
@@ -2698,6 +2728,11 @@ LED.CTRL</text>
 <wire x1="36.83" y1="102.87" x2="39.37" y2="102.87" width="0.1524" layer="91"/>
 <label x="39.37" y="102.87" size="1.27" layer="95" xref="yes"/>
 </segment>
+<segment>
+<wire x1="259.08" y1="35.56" x2="259.08" y2="38.1" width="0.1524" layer="91"/>
+<label x="259.08" y="38.1" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="Q1" gate="G$1" pin="C"/>
+</segment>
 </net>
 <net name="VREF" class="0">
 <segment>
@@ -2725,13 +2760,6 @@ LED.CTRL</text>
 <wire x1="207.01" y1="92.71" x2="204.47" y2="92.71" width="0.1524" layer="91"/>
 <wire x1="204.47" y1="92.71" x2="204.47" y2="87.63" width="0.1524" layer="91"/>
 <label x="204.47" y="87.63" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="LED" class="0">
-<segment>
-<wire x1="259.08" y1="35.56" x2="259.08" y2="38.1" width="0.1524" layer="91"/>
-<label x="259.08" y="38.1" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="Q1" gate="G$1" pin="C"/>
 </segment>
 </net>
 <net name="N$8" class="0">
